@@ -1,0 +1,408 @@
+<html>
+
+<! Paul J. Gitschner   2021      >
+
+<head>
+
+<style>
+img {
+	display: block;
+  	margin-left: auto;
+  	margin-right: auto;
+  	width: 50%;
+}
+
+body {
+	background-color:LightGray;
+	margin-right: 150px;
+}
+
+
+h1 {
+  color: maroon;
+}
+
+h4 {
+  color: red;
+}
+
+h5 {
+  color: Green;
+}
+
+
+p {
+  color: DarkSlateBlue;
+}
+
+
+</style>
+
+</head>
+
+
+
+
+<body>
+
+<p><h3>Programming for the Internet of Things Course<br>
+University of California, Irvine  <br>
+
+Paul J Gitschner</h3><p>
+
+
+
+<h1>Capstone project   Week 2 : <br>Design document</h1>  
+
+Project Name:  The Pineapple Drink Metal Detector  <br>
+
+
+Tag line:  ROOMBA - meets - METAL DETECTOR - meets - ALARM CLOCK<br>
+
+<br>
+
+<h2>Systems Options, Evaluations and Choices with Rationel</h2>
+
+<h2>Major systems</h2>
+ 
+I see  five major subsystems that will interact to produce the desired results. Each will have design options.  DIAGRAM<br>
+
+<br>
+
+<p>Mobility <br>
+
+Processing <br>
+
+Sensing <br>
+
+Communication<br>
+
+Power</p>
+
+<img src="systems.png" alt="Systems diagram">
+<br>
+
+
+
+
+
+<h1>System : Mobility and Manouverability</h1> <br>
+
+<p>Goal - a system that allows the unit to physically move in the desired enviroment, namely normal beach sand.
+Unit  is meant to be mechanically agile enough to allow turns required by specified search pattern. It should be vacation portable</p> <br>
+
+<h3> System Design  Options:</h3>
+
+<h4>Name: Wheels</h4>
+<h3>Description:</h3> Large wheels or balloon tires with either four, six or eight wheels. Think Mars landers.<br>
+
+<h3>	Evaluation</h3>
+This would either have to be a very expensive custom built rig  with a motor for each wheel or the cannabalizing of a toy that may be 
+too flimsy for our attempt. Wheels may not be successful on wet beach sand where it will be most of the time.
+Battery power may be stretched by having multiple motors.<br>This system may also be too large and heavy to transport to vacation destinations, our intended working (playing) areas. <br>
+ A resonable travel package would be to contain in one checkable suitcase.<br> Power needs, systems required, wiring diagrams, and custom programing to achieve manouverabilty would be an unknown cost and time consideration.  
+
+
+
+
+<h4>Name: Treads</h4> 
+<h3>Description: </h3>Tank like Treads that move the unit. Steering is accompished by differential power applied to either side. 
+
+<h3>	Evaluation</h3>
+The larger contact surface area have been proven to be able to traverse sand. There are a number of hobbyist kits with treads already on the 
+market for the Arduino or Raspberry Pi hobbyist. These are size and weight friendly towards the project's portability goals. <br>The power needs, power control accesories and wiring diagrams are already specified. Known cost and minimal assembly and development delay. <br>An example of this is the OSEPP Electronics TANK01, light following/object avoidance robot kit. This is on the market in response to the number of hobbyists and courses that make these standard projects. 
+
+
+
+
+<h4>Name: Drone</h4>
+<h3>Description: </h3>Low flying Drone, perhaps with a skirt to make it a hover drone, meant to skim above the surface with extremely low friction.
+
+ 
+
+<h3>	Evaluation</h3>
+Commercial drones are just getting to the food deliver  stage, where they can carry some weight and fly specifically as directed. So an alternate use for our 
+purposes isn't beyound conjecture.<br> Our fixed package of sensors would be the only componant add. Weight and use-time considerations would need to be recalibrated.
+The exisiting projects are not yet at the hobby kit and open source software stage yet, asfar as I know, so our alternate use, flying just off the ground, in a search pattern, avoiding low
+obsticles, evaluating and alerting would need perhaps a lengthy development cycle.<br> New issues are the numerous ground level obsticles, (kids, dogs) at the beach.
+Other considerations  are the effect of mixing blown air and loose sand. <br>There may be flight restrictions due to the unit being a drone, even if meant to only hover.
+Many tourist beaches are close to airports and these would be foreign juristrictions.It would be hard to know accurate local done laws without expensive advice.<br> Weather and wind may affect performance. Wildlife like seagulls may affect performance.
+
+
+
+
+
+
+	
+
+<h4>Subsystem Choice and Decision Rationel</h4> 
+
+
+<h5>Choice: Tank Treads, a hobby kit.
+
+Rationel  
+I chose the OSEPP Electronics TANK01 kit.<br> This is on the market in response to the number of hobbyists and courses that make standard projects such as 
+ light following/object avoidance robots.<br>
+Easily avaiable. I found it on the self at SAYAL Electronics and Hobbies in Cambridge, Ontario, Canada.
+Known Cost It was $133.00 CDN.<br>
+Compatibility: the box specifies it is compatible with Arduino, Pi, and Lego  etc. This vendor has numerous compatible componants.<br>
+Development time. Should  have minimal assembly and development delay. The box says 10+ ages. I should be able to figure this out.</h5>
+
+ 
+<br> 
+
+
+
+<h1>System :Processing and Programming</h1> 
+
+
+<p>Goal -  To allow the unit to follow search patterns as chosen by from a standard list or be  programmed for an odd shapped territory chosen.
+Perhaps with an AI componant where it evaluates finds and learns and have enough memmory to log its searches.
+</p> <br>
+
+<h3> System Design  Options:</h3>
+
+
+<h4>Name: Custom board </h4>
+<h3>Description: Build a board from scratch  </h3> 
+<h3>	Evaluation</h3>
+The development time and learning curve would be beyond me and unneccessary for this single build " proof of concept" unit.<br>
+The costs of designing and trial and error developing functionalities would be much greater that can be cobbled togther from off the self componants.<br>
+Would first have to decide on a main chip and then design physical requirements and connections around that.<br>
+Programming  would require choosing and setting up an operating system and deciding on a languge.<br> Appropriate libraries would have to be loaded, custom software written and all would be subject to memory requirements 
+
+<br> 
+
+
+<h4>Name: Arduino </h4> 
+<h3>Description:    Using an Arduino Platform microprocessor board  unit </3>
+<h3>	Evaluation</h3>
+Arduino  has a number of General use Microcontroller boards with various parameter, Nano, Uno  and Mega are just 3. The Uno seem the best.<br>
+It would fit, be light enough. Its' power requirements are common knowlege due to the numerous hobby projects done. It can use a N298L motor driver, also widely available  to drive motors in a mobilty system which may require more than the 5 volts it uses. <br>The Uno has enough pins to connect to the required sensors and parts.
+It already has analog pins  due to its  built-in analog-to-digital converter (ADC). The pins allow easy plug in cabling so no soldering is required. 
+The Arduino family programs in C++ which is fast and there is an IDE that makes it relatively easy.<br><p>   </p>
+
+But the Arduino Uno is more of a single function system and not easily set up for multitasking, custom Grafics  or functional reconfiguration by software. This unit will be operated away from home, and will need ease of use and  a custom GUI.   
+
+<h4>Name:Raspberry Pi </h4>
+<h3>Description:   Using a member of the raspbery Pi Family </h3> 
+<h3>	Evaluation</h3>
+Raspberry Pi also  has a number of general use boards with various parameters. It is a mini full computer and would be much 
+more capable of running a GUI and multitasking sensing and mobility. <br>
+<p>   </p>
+
+The Raspberry 3A+ is a newer board., with: <br>
+<p>   </p>
+
+Broadcom BCM2837B0, Cortex-A53 64-bit SoC @ 1.4 GHz<br>
+512MB LPDDR2 SDRAM<br>
+
+2.4GHz/5GHz 802.11 b/g/n Wireless LAN<br>
+
+Bluetooth Low Eenergy 4.2 (BLE)<br>
+
+Full Size HDMI, MIPI DSI Display Port, MIPI CSI Camera Port<br>
+
+4-Pole stereo audio/composite video jack<br>
+
+MicroSD Card for OS and data storage<br>
+
+5V, 2.5A DC power supply via micro USB or GPIO<br>
+<p>   </p>
+
+
+It would use Python 3,  a slower language  than C++ but still capable for our task.
+
+	
+
+<h4>Subsystem Choice and Decision Rationel</h4> 
+
+
+<h5>Choice: <p>   </p>
+I chose the Raspberry Pi 3A+<br>
+
+<p>   </p>
+
+
+Rationel: <p>   </p>
+
+
+I am a relatively capable Python programmer with previous Pi experience on a 3B. <br> I was able to pick up a unit locally. <br>Usually in stock and relatively inexpensive at $ 60 CDN at Sayal.<br> It allows flexibility such as a camera.<br> There Are WIFI shields avaiable to allow WIFI comunications and an Ethernet connection for at home programming<br>
+A touchscreen is avaiable :<br>PITFT ASSEMBLED TFT TOUCHSCREEN FOR RASPBERRY PI 320X240 2.8IN <br> for a GUI 
+and Python's Tkinter can be used for a menu system.<br>
+Size and weight constraints are met, will easily be mounded on chosen mobilty platform. <br>Power requirements and accessories  are known and avaiable.
+ </h5>
+ 
+<br> 
+
+
+ 
+
+<h1>System: Sensors</h1> 
+<p>Goal - a system able to sense objects under the sand and sense threats to operation so as to avoid them.</p> 
+
+<h3> System Design Options:</h3>
+
+
+For Metal Detection:<br>
+<h4>1.  I could build from scratch, <br>2. or cannibalize a manufactured metal detector for it's sensor  and circuits,<br> 3. or puchase a kit. </h4>
+
+
+<h5>Choice: <p>  </p>
+
+Buy a "build a metal detector kit off the shelf, Again from Sayal:
+
+
+METAL DETECTOR KIT K7102RS Part No:   K7102RS	Manufacturer: Velleman	Stock No: 2085-WE1A	SKU No: 240935
+Stock Number: 2085-WE1A    $14.95><p>  </p>
+
+
+Rationel: <p>  </p>
+Fits time, space, money and chance of success requiements best.<p>  </p>
+
+The testing phase will determine suitability. Alternatives will be sourced if found incapable.  </h5>
+
+
+<h4>For Enviroment:<br>
+
+Not really a question of alternatives. A variety of sensors will be utilized. <br></h4>
+
+Because of the existing hobbyist markets these are already easily commercially available. <br>Sensor pins/tabs will be soldered to patch cables with pins to fit the microprocessor pins so that they are easily swappable.
+<p>  </p>
+
+
+Including:
+
+<p>  </p>
+
+
+Roller Switch to detect ground drop in front<br>
+MICRO SWITCH 1P2T NO/NC 19X10MM 19MM ROLLER LEVER 5A/125VAC SOL
+Part No: 2750017
+<p>  </p>
+
+Water detector to detect ocean in front 
+
+SOIL MOISTURE SENSOR + WATER LEVEL SENSOR MODULE
+Part No: VMA303	Manufacturer:	Stock No: 1814-CA1
+<p>  </p>
+
+Ultrasonic  to detect  obsticles in front
+a second Ultrasonic to detect ground drop 
+ULTRASONIC SENSOR MODULE TRANSMITTER & RCVR ALL IN ONE
+Part No: HC-SR04	Manufacturer: OSEPP
+
+<p>  </p>
+
+
+Tip switches  to detect flipped unit
+TILT SWITCH
+Part No: RB-SPA-1156	Manufacturer:	
+<p>  </p>
+
+
+Kid sensors : <br>
+
+R OBSTACLE AVOIDANCE SENSOR MODULE
+Part No: VMA330	Manufacturer: Velleman
+
+<p>  </p>
+
+
+VOICE SOUND DETECTION SENSOR
+Part No: C-M-01-28	Manufacturer:	Stock No: 1815
+<p>  </p>
+
+
+PIR SENSOR MODULE OPERATING VOLTAGE 5-12V
+Part No: PIR-01	Manufacturer: OSEPP	
+<p>  </p>
+
+
+MICROPHONE 20HZ-16KHZ PCMT 6MM
+Part No: WM-62PCY102	Manufacturer: Matsushita Electronics
+	<p>  </p>
+
+
+<h4>Subsystem Choice and Decision Rationel</h4> 
+
+
+<h5>Choice: All of the above. The testing phase will determine calibration or suitability. Alternatives will be sourced if found incapable.
+
+</h5>
+ 
+
+
+<p>  </p>
+
+
+
+<h1>System: Communicating and  Alerting</h1> 
+
+<p>Goal - Two way information exchange  between operator and Unit .</p> 
+
+<h3> System Design Options:</h3>
+
+<h4>Physical  </h4>
+
+Lights :Rotationg and flashing becon lamp.<br>
+Sounds : Beeper when backing up. Audible alarm when finds something.<br>
+(possible silent running mode, so the kids don't steal your treasure first!)
+
+
+<h4> Radio </h4>
+
+Determined by the choices above and operationg enviroment.<br>
+There may not be public WIFI at the chosen vacation location.<br>
+The initial goal is is interface with the users Smart Phone for alerts.<br>
+
+Setup and configuration can be done connected to a Laptop or desktop
+or  remote access thru SSH clients like Putty or another client.<br>
+<p> </p>
+
+The Raspberry Pi 3A+ comes with: <br>
+2.4GHz/5GHz 802.11 b/g/n Wireless LAN<br>
+and <br>
+
+Bluetooth Low Eenergy 4.2 (BLE)   <br><p> </p>
+The testing phase will attempt to use these capabilities best.<br>
+Other options such as Shields or Addional componants on are also avaiable <br>
+
+ 
+<br>
+
+
+<h1>System: Power and power distibution</h1> 
+
+
+<p>Goal - Power all sysytems for a reasonable duration and cost.</p> 
+
+<h3> System Design Options:</h3>
+
+Again, needs are largely determined by decisions in other systems such as processing and mobility platforms.<br>
+The power requirements of the Raspberry Pi 3A+ is only 3.7 volts while the motors will require more voltage and amperage
+than a Pi can sustain. <br>A N289L motor driver with a built voltage divider using appropriate resistors can handle the interfaces.<p> </p>
+ 
+<h4>Batteries<p> </h4>
+
+There are a number of battery types on the market,  both one time use and rechargeable.<br>
+There are three primary battery types available for consumer use. Alkaline, nickel metal hydride (NIMH), and lithium ion.<br>
+They come in a variety  of shapes, weights and power capacities.<br> Weight and Unit potability consideration would have to be maintained.<br>
+
+<p> </p>
+
+<h5>Choice:<br> 1.  I would firstly decide go with a rechageable type to lower operationg costs. <br>
+2.  I'd start  my build with a 4 PACK of Pre-Charged AA 1.25 Rechargeable 2300mAh NiMH Batteries.
+<p> </p>
+
+
+Rationel:<p> </p> Easily available for replacing while at a vacation location. <br>
+The N289L takes up to 12 volts and can power a Pi from  a 5 volt pin, that may need to be stepped down to 3.7 
+I could adjust depending on testing results, choosing to put 2 in parrallel if I get problems.</h5>
+
+
+2021 11 15 15.46
+
+
+
+
